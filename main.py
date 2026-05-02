@@ -6,19 +6,39 @@ from datetime import datetime
 # 1. Veri Seti: Değerler ve Görev Havuzu
 gorev_havuzu = {
     "Yardımlaşma": [
-        "Bugün sofrayı kurma/kaldırma görevini tek başına üstlen.",
-        "Aile üyelerinden birine 'Senin için ne yapabilirim?' diye sor.",
-        "Evdeki bitkileri sula veya evcil hayvanın bakımını yap."
+        "Bugün evde senin sorumluluğunda olmayan bir işi (sofra kurmak, çiçek sulamak vb.) 'görünmez kahraman' olarak tamamla.",
+        "Aile üyelerinden birine 'Bugün senin için ne yapabilirim?' diye sor ve bir isteğini yerine getir.",
+        "Evdeki ortak kullanım alanlarından birini (kitaplık, ayakkabılık vb.) kimse söylemeden düzenle."
     ],
     "Saygı & Vefa": [
-        "Bir aile büyüğüne çocukluk anısını sor ve dikkatle dinle.",
-        "Akşam yemeği boyunca telefonunu başka bir odada bırak.",
-        "Bugün aile üyelerine 'Teşekkür ederim' ve 'Lütfen' demeye özen göster."
+        "Bir aile büyüğüne (dede, anneanne vb.) telefon aç veya yanına git; ona en sevdiği çocukluk oyuncağını sor.",
+        "Akşam yemeği saati boyunca telefonunu tamamen başka bir odada bırakarak aileyle vakit geçir.",
+        "Bugün aile üyelerine karşı 'Teşekkür ederim' ve 'Rica ederim' kelimelerini her fırsatta kullanmaya özen göster."
     ],
     "Empati": [
-        "Bugün evdeki birinin yerine kendini koy ve onun en yorucu işini düşün.",
-        "Bir aile üyesinin sevdiği bir müziği onunla birlikte dinle.",
-        "Karşındakinin cümlesini kesmeden sonuna kadar dinleme alıştırması yap."
+        "Bugün evdeki birinin yerine kendini koy ve onun gün içinde en çok yorulduğu anı fark edip ona teşekkür et.",
+        "Bir aile üyesinin sevdiği bir müziği veya hikayeyi, yargılamadan onunla birlikte dinle.",
+        "Karşındaki bir şey anlatırken sözünü kesmeden, sadece dinleyerek onun duygusunu anlamaya çalış."
+    ],
+    "Dürüstlük": [
+        "Bugün yaptığın küçük bir hatayı (bir şeyi unutmak, geç kalmak vb.) saklamadan dürüstçe paylaş.",
+        "Bir aile üyesine, onun dürüst davranmasının sana ne kadar güven verdiğini söyle.",
+        "Verdiğin bir sözü (küçük de olsa) bugün tam vaktinde ve eksiksiz yerine getir."
+    ],
+    "Sorumluluk": [
+        "Bugün kendi odanı ve çalışma masanı hiç hatırlatılmadan, en düzenli haline getir.",
+        "Evde tasarruf etmek için (gereksiz ışıkları söndürmek, suyu dikkatli kullanmak vb.) bir 'enerji nöbetçisi' ol.",
+        "Bugün okul veya iş çantanı/eşyalarını bir sonraki gün için akşamdan eksiksiz hazırla."
+    ],
+    "Sabır": [
+        "Bugün evde seni bekleten veya biraz sinirlendiren bir duruma karşı derin bir nefes alıp gülümseyerek karşılık ver.",
+        "Sıra beklediğin veya bir şeyin olmasını istediğin bir anda içinden 10'a kadar sayarak sakin kalma alıştırması yap.",
+        "Bugün bir teknolojik cihazın (oyun, sosyal medya vb.) başında geçirdiğin süreyi sabrederek 15 dakika azalt."
+    ],
+    "Adalet & Paylaşma": [
+        "Evdeki bir imkanı (televizyon kumandası, atıştırmalık paylaşımı vb.) kendi isteğinden önce başkasının hakkını gözeterek kullan.",
+        "Bugün sevdiğin bir eşyanı veya bir yiyeceğini aile üyelerinden biriyle isteyerek paylaş.",
+        "Aile içinde bir karar alınırken herkesin fikrini söyleyebilmesi için ortam oluştur veya kardeşinin hakkını savun."
     ]
 }
 
