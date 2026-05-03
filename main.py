@@ -86,19 +86,19 @@ with col1:
         
         if st.button("✅ Görevi Tamamladım!"):
            if aile_kodu and aile_uyesi: # Kod ve isim boş değilse
-        yeni_kayit = {
-            "Tarih": datetime.now().strftime("%Y-%m-%d %H:%M"),
-            "Aile_Kodu": aile_kodu, # Hangi aile olduğunu ayıran sütun
-            "Üye": aile_uyesi,
-            "Değer": secilen_deger,
-            "Görev": st.session_state.gunun_gorevi
-        }
-        # Fonksiyonu çağırarak Google Sheets'e gönderiyoruz
-        veriyi_tabloya_yaz(yeni_kayit)
-        st.success("Tebrikler! Göreviniz başarıyla kaydedildi.")
-        st.balloons()
-    else:
-        st.error("Lütfen önce Aile Kodunuzu ve Adınızı giriniz!")
+              yeni_kayit = {
+                   "Tarih": datetime.now().strftime("%Y-%m-%d %H:%M"),
+                   "Aile_Kodu": aile_kodu, # Hangi aile olduğunu ayıran sütun
+                   "Üye": aile_uyesi,
+                   "Değer": secilen_deger,
+                   "Görev": st.session_state.gunun_gorevi
+             }
+             # Fonksiyonu çağırarak Google Sheets'e gönderiyoruz
+             veriyi_tabloya_yaz(yeni_kayit)
+             st.success("Tebrikler! Göreviniz başarıyla kaydedildi.")
+             st.balloons()
+        else:
+             st.error("Lütfen önce Aile Kodunuzu ve Adınızı giriniz!")
 
 # --- İSTATİSTİK PANELİ: Digital Twin Altyapısı ---
 with col2:
