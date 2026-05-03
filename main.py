@@ -90,11 +90,10 @@ with col1:
                     "Tarih": datetime.now().strftime("%Y-%m-%d %H:%M"),
                     "Aile_Kodu": aile_kodu,
                     "Üye": aile_uyesi,
-                    "Değer": secilen_değer,
+                    "Değer": secilen_deger,
                     "Görev": st.session_state.gunun_gorevi
                 }
                 
-                # KRİTİK DÜZELTME: Başındaki # işaretini kaldırdık!
                 veriyi_tabloya_yaz(yeni_kayit)
                 
                 # Listeyi de güncelleyelim ki tabloda hemen görünsün
