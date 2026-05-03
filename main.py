@@ -80,7 +80,7 @@ col1, col2 = st.columns([2, 1])
 
 with col1:
     st.info(f"**Mevcut Odak:** {secilen_deger}")
-    
+ 
     if 'gunun_gorevi' in st.session_state:
         st.success(f"### 🎯 Görevin:\n {st.session_state.gunun_gorevi}")
         
@@ -94,7 +94,7 @@ with col1:
                    "Görev": st.session_state.gunun_gorevi
              }
              # Fonksiyonu çağırarak Google Sheets'e gönderiyoruz
-             veriyi_tabloya_yaz(yeni_kayit)
+               veriyi_tabloya_yaz(yeni_kayit)
              st.success("Tebrikler! Göreviniz başarıyla kaydedildi.")
              st.balloons()
         else:
