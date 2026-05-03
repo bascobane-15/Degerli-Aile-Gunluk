@@ -96,7 +96,7 @@ with col1:
              # Fonksiyonu çağırarak Google Sheets'e gönderiyoruz. veriyi_tabloya_yaz(yeni_kayit)                                                
         st.success("Tebrikler! Göreviniz başarıyla kaydedildi.")
         st.balloons()
-        else:
+    else:
         st.error("Lütfen önce Aile Kodunuzu ve Adınızı giriniz!")
 
 # --- İSTATİSTİK PANELİ: Digital Twin Altyapısı ---
