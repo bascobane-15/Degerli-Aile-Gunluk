@@ -4,16 +4,16 @@ import random
 from datetime import datetime
 from streamlit_gsheets import GSheetsConnection # Bunu 5. satıra ekle
 
-# --- GOOGLE SHEETS BAĞLANTISI (https://docs.google.com/spreadsheets/d/1UPkXml7U0OUUKZdmHIogTt5ZBk18KBYG69by8WTtSrI/edit?usp=sharing) ---
+# --- GOOGLE SHEETS BAĞLANTISI  ---
 conn = st.connection("gsheets", type=GSheetsConnection)
 def veriyi_tabloya_yaz(yeni_veri):
     try:
         # Mevcut veriyi oku
-        existing_data = conn.read(worksheet="Sayfa1")
+        existing_data = conn.read(spreadsheet=st.secrets["connections"]["gsheets"]["spreadsheet"], worksheet="Sayfa1")
         # Yeni veriyi ekle
         updated_df = pd.concat([existing_data, pd.DataFrame([yeni_veri])], ignore_index=True)
         # Tabloyu güncelle
-        conn.update(worksheet="Sayfa1", data=updated_df)
+        conn.update(spreadsheet=st.secrets["connections"]["gsheets"]["spreadsheet"], worksheet="Sayfa1", data=updated_df)
     except Exception as e:
         st.error(f"Veri kaydedilirken bir hata oluştu: {e}")
 # 1. Veri Seti: Değerler ve Görev Havuzu
