@@ -67,10 +67,11 @@ if 'tamamlanan_gorevler' not in st.session_state:
 
 # --- SOL PANEL: Değer Seçimi ---
 with st.sidebar:
-    st.header("⚙️ Ayarlar")
-    secilen_deger = st.selectbox("Bu Haftanın Değeri:", list(gorev_havuzu.keys()))
+    st.header("🔑 Giriş Bilgileri")
+    aile_kodu = st.text_input("Aile Kodunuz (Örn: AILE01):") # Bunu yeni ekliyoruz
     aile_uyesi = st.text_input("Adınız:", placeholder="Örn: Tuğçe")
-    
+    secilen_deger = st.selectbox("Bu Haftanın Değeri:", list(gorev_havuzu.keys()))
+        
     if st.button("🎰 Günün Görevini Çek"):
         st.session_state.gunun_gorevi = random.choice(gorev_havuzu[secilen_deger])
 
