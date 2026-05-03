@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import random
 from datetime import datetime
-
+from streamlit_gsheets import GSheetsConnection
 # 1. Veri Seti: Değerler ve Görev Havuzu
 gorev_havuzu = {
     "Yardımlaşma": [
