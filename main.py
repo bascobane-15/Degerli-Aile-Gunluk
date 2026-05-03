@@ -4,8 +4,7 @@ import random
 from datetime import datetime
 from streamlit_gsheets import GSheetsConnection
 # Google Sheets Bağlantısı
-conn = st.connection("gsheets", type=GSheetsConnection)
-
+conn = st.connection("gsheets", type=GSheetsConnection, spreadsheet="https://docs.google.com/spreadsheets/d/1UPkXml7U0OUUKZdmHIogTt5ZBk18KBYG69by8WTtSrI/edit?usp=sharing")
 # Veriyi Tabloya Yazma Fonksiyonu
 def veriyi_tabloya_yaz(yeni_veri):
     try:
