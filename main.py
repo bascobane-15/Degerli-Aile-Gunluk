@@ -5,7 +5,7 @@ from datetime import datetime
 from streamlit_gsheets import GSheetsConnection # Bunu 5. satıra ekle
 
 # --- GOOGLE SHEETS BAĞLANTISI (Buraya eklenmeli) ---
-conn = st.connection("gsheets", type=GSheetsConnection, spreadsheet="https://docs.google.com/spreadsheets/d/1UPkXml7U0OUUKZdmHIogTt5ZBk18KBYG69by8WTtSrI/edit?usp=sharing")
+conn = st.connection("gsheets", type=GSheetsConnection)
 def veriyi_tabloya_yaz(yeni_veri):
     try:
         # Mevcut veriyi oku
