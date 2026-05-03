@@ -84,22 +84,19 @@ with col1:
         st.success(f"### 🎯 Görevin:\n {st.session_state.gunun_gorevi}")
         
         if st.button("✅ Görevi Tamamladım!"):
-            if aile_kodu and aile_uyesi: # Kod ve isim boş değilse
+           if aile_kodu and aile_uyesi: # Kod ve isim boş değilse
                 yeni_kayit = {
-                    "Tarih": datetime.now().strftime("%Y-%m-%d %H:%M"),
-                    "Aile_Kodu": aile_kodu,
-                    "Üye": aile_uyesi,
-                    "Değer": secilen_deger,
-                    "Görev": st.session_state.gunun_gorevi
-                }
-                
-                veriyi_tabloya_yaz(yeni_kayit)
-                
-                # Listeyi de güncelleyelim ki tabloda hemen görünsün
-                st.session_state.tamamlanan_gorevler.append(yeni_kayit)
-                
+                     "Tarih": datetime.now().strftime("%Y-%m-%d %H:%M"),
+                     "Aile_Kodu": aile_kodu,
+                     "Üye": aile_uyesi,
+                     "Değer": secilen_deger,
+                     "Görev": st.session_state.gunun_gorevi
+                 }
+            
+                veriyi_tabloya_yaz(yeni_kayit) 
                 st.success("Tebrikler! Göreviniz başarıyla kaydedildi.")
                 st.balloons()
+                
             else:
                 st.error("Lütfen önce Aile Kodunuzu ve Adınızı giriniz!")
 
