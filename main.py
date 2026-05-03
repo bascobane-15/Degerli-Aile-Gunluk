@@ -92,11 +92,11 @@ with col1:
                    "Üye": aile_uyesi,
                    "Değer": secilen_deger,
                    "Görev": st.session_state.gunun_gorevi
-             }
-             # Fonksiyonu çağırarak Google Sheets'e gönderiyoruz
-               veriyi_tabloya_yaz(yeni_kayit)
-             st.success("Tebrikler! Göreviniz başarıyla kaydedildi.")
-             st.balloons()
+            }
+            # Fonksiyonu çağırarak Google Sheets'e gönderiyoruz
+            veriyi_tabloya_yaz(yeni_kayit)
+            st.success("Tebrikler! Göreviniz başarıyla kaydedildi.")
+            st.balloons()
         else:
              st.error("Lütfen önce Aile Kodunuzu ve Adınızı giriniz!")
 
