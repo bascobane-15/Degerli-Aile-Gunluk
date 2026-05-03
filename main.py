@@ -93,8 +93,7 @@ with col1:
                    "Değer": secilen_deger,
                    "Görev": st.session_state.gunun_gorevi
             }
-            # Fonksiyonu çağırarak Google Sheets'e gönderiyoruz
-            veriyi_tabloya_yaz(yeni_kayit)
+             # Fonksiyonu çağırarak Google Sheets'e gönderiyoruz. veriyi_tabloya_yaz(yeni_kayit)                                                
             st.success("Tebrikler! Göreviniz başarıyla kaydedildi.")
             st.balloons()
         else:
