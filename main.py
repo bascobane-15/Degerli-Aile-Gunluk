@@ -85,17 +85,20 @@ with col1:
         st.success(f"### 🎯 Görevin:\n {st.session_state.gunun_gorevi}")
         
         if st.button("✅ Görevi Tamamladım!"):
-            yeni_kayit = {
-                "Tarih": datetime.now().strftime("%Y-%m-%d %H:%M"),
-                "Üye": aile_uyesi if aile_uyesi else "Anonim",
-                "Değer": secilen_deger,
-                "Görev": st.session_state.gunun_gorevi
-            }
-            st.session_state.tamamlanan_gorevler.append(yeni_kayit)
-            st.balloons()
-            st.write("Harikasın! Puanın hanene yazıldı.")
+           if aile_kodu and aile_uyesi: # Kod ve isim boş değilse
+        yeni_kayit = {
+            "Tarih": datetime.now().strftime("%Y-%m-%d %H:%M"),
+            "Aile_Kodu": aile_kodu, # Hangi aile olduğunu ayıran sütun
+            "Üye": aile_uyesi,
+            "Değer": secilen_deger,
+            "Görev": st.session_state.gunun_gorevi
+        }
+        # Fonksiyonu çağırarak Google Sheets'e gönderiyoruz
+        veriyi_tabloya_yaz(yeni_kayit)
+        st.success("Tebrikler! Göreviniz başarıyla kaydedildi.")
+        st.balloons()
     else:
-        st.warning("Henüz görev çekilmedi. Sol menüden görevini belirle!")
+        st.error("Lütfen önce Aile Kodunuzu ve Adınızı giriniz!")
 
 # --- İSTATİSTİK PANELİ: Digital Twin Altyapısı ---
 with col2:
