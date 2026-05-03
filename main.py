@@ -2,8 +2,7 @@ import streamlit as st
 import pandas as pd
 import random
 from datetime import datetime
-from streamlit_gsheets 
-import GSheetsConnection
+from streamlit_gsheets import GSheetsConnection
 # Google Sheets Bağlantısı
 conn = st.connection("gsheets", type=GSheetsConnection)
 
