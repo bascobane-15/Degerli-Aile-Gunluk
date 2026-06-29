@@ -8,34 +8,15 @@ from streamlit_gsheets import GSheetsConnection
 conn = st.connection("gsheets", type=GSheetsConnection)
 def veriyi_tabloya_yaz(yeni_veri):
     try:
-        # 1. Mevcut veriyi oku
-        existing_data = conn.read(
-            spreadsheet=st.secrets["connections"]["gsheets"]["spreadsheet"], 
-            worksheet="Sayfa1"
-        )
-        
-        # --- HATA AYIKLAMA (DEBUG) İÇİN BİR ANLIK EKLEYELİM ---
-        # Eğer hata devam ederse terminalde yeni_veri'nin tipini kontrol et.
-        # print("Yeni veri tipi:", type(yeni_veri)) 
-        # -----------------------------------------------------
-
-        # 2. Yeni veriyi DataFrame'e dönüştür
-        # Eğer yeni_veri bir sözlükse, listeye sarmak ([yeni_veri]) doğru yöntemdir.
-        new_row_df = pd.DataFrame([yeni_veri])
-        
-        # 3. İki veriyi alt alta birleştir
-        updated_df = pd.concat([existing_data, new_row_df], ignore_index=True)
-        
-        # 4. Tabloyu güncelle
-        conn.update(
-            spreadsheet=st.secrets["connections"]["gsheets"]["spreadsheet"], 
-            worksheet="Sayfa1", 
-            data=updated_df
-        )
-        st.success("Tebrikler! Göreviniz başarıyla kaydedildi.") # Arayüzdeki yeşil kutu için
-        
+        # Mevcut veriyi oku
+        existing_data = conn.read(spreadsheet=st.secrets["connections"]["gsheets"]["spreadsheet"], worksheet="Sayfa1")
+        # Yeni veriyi ekle
+        updated_df = pd.concat([existing_data, pd.DataFrame([yeni_veri])], ignore_index=True)
+        # Tabloyu güncelle
+        conn.update(spreadsheet=st.secrets["connections"]["gsheets"]["spreadsheet"], worksheet="Sayfa1", data=updated_df)
     except Exception as e:
         st.error(f"Veri kaydedilirken bir hata oluştu: {e}")
+
 # 1. Veri Seti: Değerler ve Görev Havuzu
 gorev_havuzu = {
     "Yardımlaşma": [
